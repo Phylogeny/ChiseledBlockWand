@@ -1,0 +1,7 @@
+{
+  "block_swap": {
+    "category": "block",
+    "subtitle": "subtitle.chiseledblockwand.block.swap",
+    "sounds": [ "chiseledblockwand:swap" ]
+  }
+}

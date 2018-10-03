@@ -1,0 +1,16 @@
+[
+{
+  "modid": "chiseledblockwand",
+  "name": "Chiseled Block Wand",
+  "description": "This is an example mod for Direwolf20 that demonstrates the Chisels & Bits API functionality necessary to support chiseled blocks in his Building Gadgets mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://minecraft.curseforge.com/projects/chiseled-block-wand",
+  "updateJSON": "${updatejson}",
+  "authorList": ["Phylogeny"],
+  "credits": "To Algo, for creating C&B, and Dire, for finally creating a mod after all these years. :D",
+  "logoFile": "assets/chiseledblockwand/logo/logo.png",
+  "screenshots": [],
+  "dependencies": ["chiselsandbits"]
+}
+]

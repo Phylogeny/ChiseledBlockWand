@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = minecraft_version + "-" + version
+group = "phylogeny.chiseledblockwand"
+archivesBaseName = "ChiseledBlockWand"
+
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+compileJava {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+minecraft {
+    version = minecraft_version + "-" + forge_version
+    runDir = "run"
+    mappings = "snapshot_20171003"
+    replaceIn "ChiseledBlockWand.java"
+    replace "@VERSION@", project.version
+    replace "@UPDATE@", update_json
+}
+
+repositories {
+    maven {
+	    name "Progwml6 maven"
+        url  "http://dvs1.progwml6.com/files/maven"
+    }
+	maven {
+	    name "ModMaven"
+        url  "modmaven.k-4u.nl"
+    }
+}
+
+dependencies {
+    deobfProvided "mod.chiselsandbits:chiselsandbits:${chisels_and_bits_version}:api"
+	deobfProvided "mezz.jei:jei_${minecraft_version}:${jei_version}:api"
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+    inputs.property "updatejson", update_json
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version, 'updatejson':update_json
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
