@@ -17,6 +17,7 @@ import phylogeny.chiseledblockwand.extra.BitCrafting;
 @Mod(modid = ChiseledBlockWand.MOD_ID,
 	 version = ChiseledBlockWand.VERSION,
 	 acceptedMinecraftVersions = ChiseledBlockWand.MC_VERSIONS_ACCEPTED,
+	 dependencies = ChiseledBlockWand.DEPENDENCIES,
 	 updateJSON = ChiseledBlockWand.UPDATE_JSON)
 public class ChiseledBlockWand
 {
@@ -26,6 +27,7 @@ public class ChiseledBlockWand
 	public static final String VERSION = "@VERSION@";
 	public static final String UPDATE_JSON = "@UPDATE@";
 	public static final String MC_VERSIONS_ACCEPTED = "[1.12.2,)";
+	public static final String DEPENDENCIES = "after:chiselsandbits@[14.25,)";
 	public static final String PROXY_CLIENT = MOD_PATH + ".example.ProxyClient";
 	public static boolean jeiLoaded;
 	public static Logger logger;
